@@ -1,0 +1,15 @@
+PIXEL WORKSHOP ARTWORK
+Generation mode: built-in image generation.
+
+Saved project assets:
+assets/workshop-scene.png — 1536 x 1024 RGB
+assets/workshop-guide.png — 1254 x 1254 RGBA with transparency
+
+Workshop scene prompt:
+Use case: stylized-concept. Asset type: production wide website hero background, landscape 1536x1024. Create gorgeous richly detailed crisp pixel-art developer workshop at night. Deep near-black navy purple background, right side mysterious open workshop doorway glowing violet and teal, amber wall lamp, glowing blue terminal monitors with abstract code lines, workbench, hanging cables, tiny potted plants, scattered luminous pixels. Bottom right small original friendly pixel characters: a teal terminal-headed robot mechanic, an orange little cat wearing headphones, a tiny glowing flame companion, a violet cube bot. Keep all subjects entirely in rightmost 65%, leave leftmost 40% mostly very dark empty navy atmospheric negative space for real HTML headline. Pixel cobblestone floor with subtle rain reflections, sophisticated restrained neon purple/blue and amber light. Sharp deliberate pixel clusters, rich handcrafted indie-game atmosphere, beautiful moody composition. No text, no words, no logos, no watermarks, no website UI, no login form.
+
+Robot guide prompt:
+Use case: stylized-concept. Asset type: transparent production website pixel character illustration, square. An original adorable small teal-and-violet terminal-headed robot workshop guide, full body, 3/4 view facing left, dark navy mechanic jacket with violet collar and tiny cyan belt, screen face with two warm cyan pixel eyes and a simple smiling pixel mouth. Holding a tiny glowing amber screwdriver. Friendly competent indie game character, distinctive angular terminal head silhouette and small antenna, feet fully visible, centered with generous transparent margin. Crisp handcrafted pixel art with chunky pixel clusters, 32-bit adventure-game sprite aesthetic, beautiful neon rim lights, limited palette navy teal violet amber. No background, truly transparent alpha. No text, no letters, no logo, no watermark.
+
+The moving guide is a static generated illustration animated using CSS transforms.
+This is not a multi-frame character sprite sheet.

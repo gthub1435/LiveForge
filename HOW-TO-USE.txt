@@ -1,0 +1,177 @@
+LIVE LAYOUT EDITOR 3.11 — HOW TO USE
+=================================
+
+INSTALL ONCE (WINDOWS)
+1. Extract the complete folder to a permanent location. Node.js 20+ is required
+   only for saving local project source. Websites can be previewed without it.
+2. Open chrome://extensions and enable Developer mode.
+3. Click Load unpacked and choose this package's extension folder.
+4. For local source saving, run INSTALL-COMPANION.cmd from the fully extracted
+   folder. It installs its own runtime in your user folder. Do not run the CMD
+   directly inside the ZIP. If Windows asks whether to run this unsigned script,
+   choose Run only after confirming it is this package. Keep the extension
+   folder in a permanent location so Chrome can continue loading it.
+5. When updating an existing installation, click Reload on its extension card
+   and refresh any page on which the old editor was running.
+
+ANY ORDINARY LIVE WEBSITE — TEMPORARY PREVIEW
+1. Open the website in Chrome and click the extension icon.
+2. Click Preview this website. No project folder or companion is needed.
+3. Double-click an element to select/edit it. No tools panel appears.
+   Right-click it to open Element options: color, dimensions, spacing, images,
+   layers and other properties. More opens advanced controls inside that menu.
+   Press Escape or click outside to dismiss the menu. Shift+F10 opens it from
+   the keyboard for the selected element.
+4. Click outside an element to finish its preview edit.
+5. Changes remain in that tab. Reload to discard them. Apply changes in code
+   is disabled. Export report downloads a JSON/TXT description; it does not
+   publish or modify the website.
+
+LOCALHOST — APPLY TO PROJECT FILES
+1. Run the project's normal development server, or any static HTTP server.
+   You do NOT need dev:visual, Next.js, a package.json, or a specific editor.
+2. Open its localhost URL. Click the extension icon.
+3. Click Choose project folder. A connection page opens. Click its Choose
+   project folder button and select the original project folder in Windows.
+   The folder connects to the localhost address; files are not uploaded.
+   Return to localhost. Manual path entry remains available in the popup.
+4. Save all open files in your code editor, then Start local project editing.
+5. Double-click an element. Right-click it for options; drag/resize handles
+   remain on the selection frame. Clicking outside only
+   finishes the preview edit; it does NOT write any source files.
+6. Click Apply changes in code.
+7. Source elements resolve automatically from build-time markers or a unique
+   strong literal match, including supported styled-components. No file chooser
+   is shown. If matching is ambiguous, Apply stops; enable development source
+   mapping for reliable provenance rather than choosing a file by guesswork.
+8. Review the exact before/after source and click Apply these source changes.
+   The companion updates those files on disk; VS Code, Cursor and other editors
+   detect the file changes. No separate editor-specific plugin is required.
+9. Static pages reload and reconnect after Apply. Framework development servers
+   may refresh automatically. Preview changes are never published to a server.
+
+You can reconnect another folder to the same address or use other localhost
+ports for other projects. No project names or paths are embedded in the
+extension. Reconnect only the folder actually serving that address.
+
+WHAT THIS RELEASE CAN SAVE
+- Literal HTML/HTM elements: text, supported attributes and inline CSS.
+- Literal JSX/TSX elements in React projects, discovered without a compiler
+  plugin: text, supported attributes and element-level React style objects.
+- Literal template elements in Vue, Svelte and Astro files: the static subset
+  described in SOURCE-HOW-TO-USE.txt; this is not full compiler integration.
+- Optional Next development mappings preserve the earlier shared CSS-module
+  and static styled-components adapters. They are not required for previews
+  or portable HTML/JSX source discovery.
+
+HONEST LIMITS
+This is a portable editor, not guaranteed source support for every framework
+or every element. Dynamic/database content, JavaScript-created markup,
+unsupported templates, custom components with no DOM source mapping, and
+arbitrary structural rewrites may have no safe source edit. Those changes can
+be previewed; unsupported source transactions are rejected without pretending
+that code was saved. No runtime override file is substituted for a rejected
+original-source write.
+
+Chrome blocks extension editing on protected browser pages. Cross-origin
+iframes, closed shadow roots, canvas contents and pseudo-elements are not
+independent editable DOM elements in this release. See SOURCE-HOW-TO-USE.txt
+for source scope, conflicts, recovery and optional mappings.
+
+LAYER CONTROLS (3.2)
+Double-click an element to find Bring to front, Send to back, Bring forward and
+Send backward in Element tools. Forward/backward reorder one sibling at a time.
+Unavailable step directions are disabled. Front/back reorder the selected
+branch through its ancestor hierarchy, including parent stacking contexts.
+Bring to front overrides ancestor overflow clipping, clip-path, mask-image and
+paint containment when needed. This may change parent/container appearance or
+scrolling and affect sibling content. Changed areas are highlighted.
+The element stays in its existing DOM/component parent. Undo/Redo and reset
+include all affected ancestor/sibling styles. Source Apply includes those
+changes in its review; it may need several source-location selections.
+Extreme page z-index values are rebased below the editor's own controls.
+Page CSS cannot override the browser top layer (modal dialogs, open popovers,
+fullscreen), browser UI, iframe boundaries or a hidden ancestor. These controls
+handle ordinary page layers; no universal all-rules bypass exists.
+
+PANEL WINDOW CONTROLS (3.3)
+The main editor header now has Minimize (-), Maximize (square) and Restore.
+Minimize collapses it to a compact draggable header without leaving edit mode
+or hiding the selected element's tools. Double-clicking the page still works.
+Maximize expands the main panel to the viewport. Restore brings it back to
+its normal size and placement. Minimize from maximized mode and restore return
+to maximized mode; the size-restore control returns to the normal window.
+Window controls do not apply changes to source or discard staged previews.
+Exit edit mode remains a separate action.
+
+LOCAL SAVING TROUBLESHOOTING (3.4)
+- The popup shows the actual companion connection error if setup fails.
+- Run INSTALL-COMPANION.cmd from the complete extracted folder, not inside ZIP.
+  Its permanent runtime is %USERPROFILE%\.live-layout-editor\companion.
+- Source mode needs a connected folder and Start local project editing.
+  LOCAL PREVIEW alone cannot write code.
+- Drag and resize now preserve source identity for uninstrumented elements.
+- Apply changes in code still requires source selection/review where needed.
+  Dynamic or unsupported source patterns keep their existing limits.
+
+LIVE CSS INSPECTOR (3.5)
+Right-click the selected element and choose Live CSS inspector. Search the
+full computed-property list and edit supported values directly; previews update
+immediately. The inspector follows your selected element and updates periodically
+while open. It has separate minimize, maximize, restore, drag and close controls.
+Matching CSS rules (including ancestor matches) and ::before/::after computed
+values are available as read-only views. Cross-origin stylesheets may block
+rule inspection; computed values remain visible. This is not a complete Chrome
+DevTools replacement. Editing computed CSS stages element-level changes for
+source Apply; it does not automatically rewrite arbitrary shared rules.
+The selected glass logo is used for Chrome icons, popup and editor header.
+
+HIDDEN ELEMENT HINTS (3.6)
+Hide leaves a named, clickable Hidden / Show marker at the element's last
+visible position. Click it to show only that element, preserving its color,
+size, content and other preview edits. Other hidden elements remain hidden.
+A small Hidden elements list also lets you restore offscreen items. Markers
+follow scrolling; they do not reserve layout space or change the page's DOM
+structure. Undo/Redo and reset also update the hints. Markers are editor UI,
+not exported page content. They disappear when edit mode is closed.
+When a hide has been applied to local source, marker metadata survives refresh
+in the same tab/project. Click Show for a preview, then Apply changes in code
+to save visibility back to source. Original display type (e.g. flex/grid) is
+restored. Marker metadata uses session storage: it is not guaranteed after
+closing the tab/browser or if browser storage is blocked. Preview-only hiding
+is discarded on refresh, like other live-site preview changes.
+
+MULTI-SELECTION AND CSS
+Ctrl-click (or Cmd-click) to add/remove objects. Drag a rectangle on the page
+to select fully enclosed objects. Selected parents include their children, so
+objects never move twice. Use Move on the selection frame to move the group.
+Resize changes each selected object by the same width/height delta. CSS edits
+apply to the selection; displayed values come from the last selected object.
+Delete/Backspace hides the selection with individual Show hints; Undo restores
+the whole action. Single-object replacement and layer tools are disabled for
+groups. Double-click a single object for text editing. Live CSS opens on
+selection and can be reopened from the main toolbar. Minimize/maximize remain
+available. All source changes still require review and Apply.
+
+CSS ACTION FOLLOWING
+Follow current action is enabled by default. Move/resize and style actions
+bring related computed properties to the top, highlight them, and scroll the
+CSS panel to their live values. Typing a manual search pauses following; check
+Follow current action to resume. Show all CSS clears the action highlights.
+Closed or minimized CSS panels stay closed/minimized.
+
+LIVE SERVER TEXT EDITING
+Double-click the text portion of headings/buttons even when they contain BR,
+emphasis or SVG children. Only the selected direct text segment changes;
+embedded markup stays intact. Temporary selection styles are removed after
+editing. Original static HTML text-segment writes are supported after reviewed
+Apply; framework/template segment writes remain blocked until their adapter
+can preserve the structure safely. Live Server origins such as 127.0.0.1:5500
+must be connected separately from localhost:3000 for source saving.
+
+VISIBLE NON-INTERACTIVE TEXT
+Double-clicking visible text also works when its page styles use pointer-events:
+none, including decorative HUD labels. The editor targets the visible text
+inside the clicked page container. Page pointer-event styles are restored
+after editing. This does not expose hidden text, text inside images/canvas,
+or content inside inaccessible frames or closed shadow roots.

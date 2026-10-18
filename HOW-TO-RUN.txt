@@ -1,0 +1,21 @@
+LIVE LAYOUT EDITOR WEBSITE — NO LOGIN
+===================================
+1. Extract this ZIP.
+2. Open index.html, or double-click START-WEBSITE.cmd on Windows.
+3. The complete website runs locally. No login or package installation is needed.
+
+To publish: upload this folder's contents to GitHub, import it in Vercel, select
+Other, leave Build Command unset, and set Output Directory to .
+Make the production deployment public and disable any hosting login protection.
+Full details are in README.md.
+
+PIXEL WORKSHOP EDITION
+Click the robot for developer tips. Use Dim workshop lights for a darker scene.
+Reduce motion in the footer pauses the decorative animation.
+Keep BOTH style.css and pixel-workshop.css, BOTH app.js and workshop.js,
+and the entire assets folder beside index.html.
+
+COMPLETE WORKSHOP EDITION
+Keep workshop-world.css and workshop-world.js with the other website files.
+Use Why this tool? for the DevTools comparison and the source-saving walkthrough.
+Source files change only after a supported edit is reviewed and Apply confirmed.

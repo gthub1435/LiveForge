@@ -1,0 +1,6 @@
+Deploy this extracted folder, not the ZIP itself.
+Place index.html, assets, and vercel.json directly in your GitHub repository root.
+Remove the old redirect index.html and old nested website folder from the repository when replacing the site.
+Vercel: Framework Preset Other; Root Directory repository root; Build Command blank; Output Directory .
+Save settings and redeploy. Old project settings may still point at the previous nested folder.
+For a CLI deployment, run npx vercel --prod from the extracted folder.

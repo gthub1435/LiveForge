@@ -1,0 +1,1523 @@
+/* Pixel workshop: the visual world continues through every checkpoint. */
+:root {
+  --world-line: #a48bc83b;
+  --world-glass: #191326;
+  --cyan: #8ee5dd;
+}
+body {
+  background-image:
+    radial-gradient(ellipse at 0 40%, #35115216, transparent 45%),
+    radial-gradient(ellipse at 100% 70%, #163e4714, transparent 40%);
+}
+.section {
+  position: relative;
+}
+.section > .section-heading .eyebrow:before {
+  content: '✦';
+  color: var(--cyan);
+  font-size: 13px;
+}
+.section-heading h2 {
+  font-size: clamp(34px, 4.2vw, 49px);
+}
+.section-heading > p {
+  font-size: 13px;
+}
+.section-heading h2 .serif {
+  color: #c9abff;
+}
+.principles {
+  background: linear-gradient(90deg, #141021bb, #0d0b18);
+  border: 1px solid var(--world-line);
+  border-left: 0;
+  border-right: 0;
+}
+.principles p i {
+  animation: worldSpark 4s steps(2) infinite;
+}
+.feature-layout {
+  gap: 22px;
+}
+.feature-large {
+  padding: 28px 30px 0;
+}
+.feature-large p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.feature-layout .feature-large {
+  background: linear-gradient(180deg, #22172f, #171020);
+  border: 1px solid #a183c24d;
+}
+.workbench-art {
+  margin: 24px -30px 0;
+  position: relative;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  border-top: 1px solid var(--world-line);
+  background: #10091a;
+}
+.workbench-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: pixelated;
+  transition: scale 0.7s;
+}
+.workbench-art:hover img {
+  scale: 1.035;
+}
+.workbench-art:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #100a1d99, transparent 30%);
+  pointer-events: none;
+}
+.workbench-art figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 8px var(--mono);
+  color: #d1b8ef;
+  letter-spacing: 0.5px;
+}
+.workbench-art figcaption > span:last-child {
+  margin-left: auto;
+  padding: 5px 7px;
+  background: #140c22d9;
+  border: 1px solid #ac88d755;
+  font-size: 7px;
+}
+.selection-reticle {
+  position: absolute;
+  inset: 30% 24% 25%;
+  border: 1px dashed #84d7e64d;
+  pointer-events: none;
+  animation: reticleGlow 5s ease-in-out infinite;
+}
+.selection-reticle i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #b3e5f6;
+  box-shadow: 0 0 8px #7bc8f688;
+}
+.selection-reticle i:nth-child(1) {
+  left: -3px;
+  top: -3px;
+}
+.selection-reticle i:nth-child(2) {
+  right: -3px;
+  top: -3px;
+}
+.selection-reticle i:nth-child(3) {
+  left: -3px;
+  bottom: -3px;
+}
+.selection-reticle i:nth-child(4) {
+  right: -3px;
+  bottom: -3px;
+}
+.feature-stack > article {
+  position: relative;
+  box-shadow: 4px 4px 0 #070510;
+}
+.feature-stack > article:after {
+  content: '⌘';
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+  font: 70px var(--pixel);
+  opacity: 0.04;
+  color: #bfa1e5;
+  pointer-events: none;
+}
+.feature-stack > article:nth-child(2):after {
+  content: '✥';
+}
+.feature-stack p {
+  font-size: 13px;
+}
+.property-chip {
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.property-chip:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, #a0d4ff0c, transparent);
+  translate: -100% 0;
+  animation: terminalSweep 6s linear infinite;
+}
+.keyboard-row {
+  font-size: 11px;
+}
+.tool-choice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.tool-card {
+  position: relative;
+  padding: 30px;
+  border: 1px solid var(--world-line);
+  background: linear-gradient(145deg, #1d1729, #10101b);
+  box-shadow: 5px 5px 0 #06040d;
+  overflow: hidden;
+}
+.tool-card:before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -70px;
+  top: -70px;
+  border: 1px solid #9f84c822;
+  box-shadow:
+    0 0 0 20px #9f84c808,
+    0 0 0 45px #9f84c804;
+  rotate: 45deg;
+  pointer-events: none;
+}
+.tool-card.editor-card {
+  background: linear-gradient(135deg, #271938, #111421);
+  border-color: #b58ae577;
+}
+.tool-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.pixel-tool-icon {
+  font: 32px var(--pixel);
+  color: #ad8dff;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ad8dff3d;
+  display: grid;
+  place-items: center;
+  background: #ad8dff0a;
+  box-shadow: 3px 3px 0 #07050e;
+}
+.editor-card .pixel-tool-icon {
+  color: var(--cyan);
+  border-color: #8ee5dd44;
+  background: #8ee5dd09;
+}
+.tool-card h3 {
+  font: 500 25px/1.25 var(--display);
+  letter-spacing: -0.8px;
+  color: #e9dbfa;
+  margin: 24px 0 14px;
+}
+.tool-card p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #b6a4c9;
+  max-width: 460px;
+}
+.tool-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  font-size: 12px;
+  line-height: 2.1;
+  color: #d2bfdf;
+  min-height: 105px;
+}
+.tool-card li:before {
+  content: '↳';
+  color: #ae89d6;
+  margin-right: 8px;
+}
+.editor-card li:before {
+  color: var(--cyan);
+}
+.tool-card > a {
+  font-size: 11px;
+  color: #bd9ee0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tool-card > a:hover {
+  color: #e3caff;
+}
+.tool-card > a svg {
+  width: 15px;
+  height: 15px;
+}
+.comparison-verdict {
+  display: flex;
+  gap: 17px;
+  margin-top: 23px;
+  border: 1px dashed #9b78bf44;
+  padding: 18px 22px;
+  background: #1d14261a;
+}
+.comparison-verdict p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #a897ba;
+}
+.comparison-verdict strong {
+  color: #d5c5e6;
+  font-weight: 550;
+}
+.pixel-spark {
+  font-size: 24px;
+  color: #94e0da;
+}
+.source-section {
+  position: relative;
+}
+.source-section:before,
+.source-section:after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #b597dd;
+  top: -4px;
+  left: 30px;
+  box-shadow: 0 0 16px #a28acb77;
+}
+.source-section:after {
+  left: auto;
+  right: 30px;
+}
+.source-grid {
+  grid-template-columns: 1fr 1.05fr;
+  gap: 45px;
+  align-items: center;
+}
+.source-grid > div > p {
+  font-size: 14px;
+  max-width: 470px;
+  line-height: 1.9;
+}
+.source-grid > div > p strong {
+  font-weight: 600;
+  color: #e2d4f1;
+}
+.source-grid .apply-boundary {
+  border-left: 2px solid #c0a0f0;
+  padding: 11px 14px;
+  background: #ad8dff09;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #ac9abd;
+}
+.source-points p {
+  font-size: 12px;
+}
+.source-visual {
+  min-width: 0;
+}
+.source-lab-art {
+  margin: 0;
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border: 1px solid #a38bcf44;
+  border-bottom: 0;
+  box-shadow: 6px 0 0 #07050e;
+}
+.source-lab-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+  image-rendering: pixelated;
+}
+.source-lab-art:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #14101fbb, transparent 50%);
+  pointer-events: none;
+}
+.source-lab-art figcaption {
+  position: absolute;
+  bottom: 14px;
+  left: 15px;
+  z-index: 2;
+  font: 7px var(--mono);
+  letter-spacing: 1px;
+  color: #bda7d4;
+}
+.source-visual .diff-window {
+  border-radius: 0;
+}
+.source-visual .diff-body {
+  padding: 17px 0;
+  font-size: 10px;
+}
+.source-visual .window-top {
+  font-size: 8px;
+}
+.source-visual .diff-label {
+  font-size: 6px;
+}
+.source-visual .diff-footer {
+  font-size: 8px;
+}
+.journey-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.journey-tabs > button {
+  border: 1px solid #a38bcf33;
+  background: #17101f;
+  color: #a38eaf;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 10px;
+  box-shadow: 3px 3px 0 #06040c;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.journey-tabs > button > span {
+  font: 11px var(--mono);
+  color: #8462a6;
+}
+.journey-tabs > button[aria-selected='true'] {
+  border-color: #b997ed;
+  background: #2d1c41;
+  color: #ead7ff;
+  box-shadow: 3px 3px 0 #51396a;
+}
+.journey-tabs > button[aria-selected='true'] > span {
+  color: #98ede1;
+}
+.journey-tabs > button:hover {
+  border-color: #a88acd;
+}
+.journey-screen {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  gap: 0;
+  align-items: center;
+  padding: 28px;
+  background: radial-gradient(ellipse at 50% 50%, #67348c16, transparent 60%), #110d1b;
+  border: 1px solid #a38bcf40;
+  box-shadow: 6px 6px 0 #06040c;
+  position: relative;
+}
+.journey-browser,
+.journey-editor {
+  min-width: 0;
+  background: #191225;
+  border: 1px solid #9c78c533;
+}
+.journey-window-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-bottom: 1px solid #a38bcf26;
+  font: 8px var(--mono);
+  color: #9481a8;
+  background: #21162f;
+}
+.journey-window-top > span:first-child {
+  font-size: 5px;
+  letter-spacing: 2px;
+  color: #9578b4;
+}
+.journey-window-top > b {
+  font-size: 6px;
+  color: #9581a8;
+  font-weight: 400;
+}
+.journey-canvas {
+  height: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: radial-gradient(#a38bcf16 1px, transparent 1px);
+  background-size: 14px 14px;
+  overflow: hidden;
+}
+.journey-canvas > span {
+  position: absolute;
+  bottom: 13px;
+  font: 7px var(--mono);
+  color: #9e8bae;
+  max-width: 90%;
+  text-align: center;
+}
+#journey-object {
+  position: relative;
+  padding: 12px 15px;
+  border: 1px solid #b491ff;
+  color: #b491ff;
+  translate: 12px -4px;
+  box-shadow: 0 0 24px #b491ff0a;
+}
+#journey-object strong {
+  font: 25px var(--pixel);
+  font-weight: 400;
+}
+#journey-object small {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font: 7px var(--mono);
+  color: #c6a8e7;
+}
+#journey-object i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #b491ff;
+}
+#journey-object i:first-of-type {
+  left: -3px;
+  top: -3px;
+}
+#journey-object i:last-of-type {
+  right: -3px;
+  bottom: -3px;
+}
+.journey-editor pre {
+  height: 173px;
+  overflow: auto;
+  margin: 0;
+  padding: 27px 17px;
+  color: #a894bc;
+  font: 11px/2 var(--mono);
+  white-space: pre-wrap;
+}
+.journey-file-status {
+  padding: 12px 9px;
+  border-top: 1px solid #a38bcf26;
+  font: 8px var(--mono);
+  color: #947aa9;
+  background: #140e1f;
+}
+.journey-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: #73548f;
+}
+.journey-bridge > span {
+  font: 28px var(--pixel);
+  color: #b491ff;
+  background: #21152d;
+  border: 1px solid #a38bcf33;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.journey-bridge i {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #a38bcf44, #b491ff, #a38bcf44);
+}
+.journey-bridge > b {
+  font: 6px/1.6 var(--mono);
+  text-align: center;
+  margin-top: 12px;
+  letter-spacing: 1px;
+  color: #8d719f;
+}
+.journey-screen[data-stage='1'] .journey-editor pre {
+  color: #d7c294;
+  background: #8a612208;
+}
+.journey-screen[data-stage='2'] .journey-editor pre,
+.journey-screen[data-stage='3'] .journey-editor pre {
+  color: #94d9c3;
+  background: #3fa18b09;
+}
+.journey-screen[data-stage='2'] .journey-file-status,
+.journey-screen[data-stage='3'] .journey-file-status {
+  color: #8ce1cc;
+}
+.journey-screen[data-stage='2'] .journey-bridge > span,
+.journey-screen[data-stage='3'] .journey-bridge > span {
+  color: #89f0d5;
+  border-color: #89f0d566;
+  box-shadow: 0 0 20px #89f0d518;
+}
+.journey-caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 23px;
+  padding: 18px 23px;
+  background: #1b1225;
+  border: 1px solid #a38bcf26;
+}
+.journey-caption > .status-dot {
+  margin-top: 7px;
+}
+.journey-caption h3 {
+  font: 500 17px/1.4 var(--display);
+  margin: 0 0 7px;
+  color: #d9c2f0;
+}
+.journey-caption p {
+  margin: 0;
+  font-size: 12px;
+  color: #b2a0c4;
+  line-height: 1.9;
+}
+.workflow-note {
+  font-size: 11px;
+  color: #9b83af;
+  line-height: 1.9;
+}
+.mode-cards article {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 0 #07040e;
+  padding-top: 38px;
+}
+.mode-cards article:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #ad8dff77 0 15px, transparent 15px 18px);
+  opacity: 0.6;
+}
+.mode-cards article.local-mode:before {
+  background: repeating-linear-gradient(90deg, #8ee5dd77 0 15px, transparent 15px 18px);
+}
+.mode-cards h3 {
+  font-size: 25px;
+}
+.mode-cards p,
+.mode-cards ul {
+  font-size: 13px;
+}
+.setup-mission-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid #a38bcf44;
+  border-bottom: 0;
+  background: #21162e;
+  padding: 15px 20px;
+  font: 9px var(--mono);
+  color: #c3a9db;
+  letter-spacing: 0.6px;
+}
+.setup-mission-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.setup-meter {
+  width: 110px;
+  height: 7px;
+  background: #100a19;
+  border: 1px solid #a38bcf33;
+  padding: 1px;
+}
+.setup-meter > i {
+  display: block;
+  height: 100%;
+  background: #92dfd1;
+  transition: width 0.3s;
+}
+.install-mission .install-grid {
+  border: 1px solid #a38bcf44;
+  padding: 22px;
+  background: linear-gradient(130deg, #1d142c, #100c1c);
+  gap: 25px;
+  grid-template-columns: 310px 1fr;
+  box-shadow: 6px 6px 0 #06040c;
+}
+.install-mission .guide-display {
+  border: 1px solid #a38bcf44;
+  box-shadow: 4px 4px 0 #090511;
+}
+.install-mission .guide-tabs {
+  margin-bottom: 20px;
+}
+.install-mission .guide-picture {
+  position: relative;
+  background:
+    linear-gradient(#110d1ee8, #160c26e8),
+    url('assets/selection-workbench.png') center/cover;
+}
+.install-mission .guide-picture:before,
+.install-mission .guide-picture:after {
+  content: '+';
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  font: 12px var(--mono);
+  color: #8c69b3;
+}
+.install-mission .guide-picture:after {
+  left: auto;
+  right: 13px;
+}
+.guide-picture .illus-window {
+  border-color: #a585cb77;
+}
+.install-mission .guide-description p {
+  font-size: 13px;
+  min-height: 115px;
+}
+.install-mission .guide-description code {
+  font-size: 12px;
+}
+.install-mission .step-button > b {
+  font-size: 12px;
+}
+.install-mission .guide-display > small {
+  font-size: 7px;
+  line-height: 1.8;
+}
+.guide-controls button {
+  min-height: 37px;
+  font-size: 11px;
+}
+.compatibility {
+  padding-top: 100px;
+}
+.compat-badge {
+  float: right;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px dashed #a38bcf44;
+  color: #ac88ca;
+  font: 30px var(--pixel);
+  padding: 12px 16px;
+  margin: 4px 0 20px 20px;
+  background: #1d12251a;
+}
+.compat-badge > span {
+  font: 7px/1.7 var(--mono);
+  letter-spacing: 1px;
+}
+.compatibility .support-table {
+  clear: both;
+  border-top: 2px solid #ad8dff55;
+  background: #130e1d;
+  padding: 0 20px;
+  box-shadow: 5px 5px 0 #06040c;
+}
+.support-table b {
+  font-size: 13px;
+}
+.support-table p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.support-tag {
+  font-size: 9px;
+}
+.support-note {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.quest-banner {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 18px 22px;
+  background: linear-gradient(90deg, #291736, #161122);
+  border: 1px solid #a38bcf3d;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.quest-banner > span {
+  font: 42px var(--pixel);
+  color: #c49ce9;
+  text-shadow: 0 0 20px #b491ff33;
+}
+.quest-banner > p {
+  margin: 0;
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+  color: #d5b7ef;
+}
+.quest-banner small {
+  display: block;
+  font: 11px/1.7 var(--sans);
+  letter-spacing: 0;
+  color: #a88cbe;
+  margin-top: 6px;
+}
+.quest-banner img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin: -20px 0 -20px auto;
+  animation: robotBob 5s ease-in-out infinite;
+}
+.quest-roadmap .roadmap {
+  gap: 15px;
+  margin-top: 0;
+}
+.quest-roadmap .roadmap article {
+  padding: 22px 19px;
+  border: 1px solid #a38bcf30;
+  background: #191222;
+  box-shadow: 4px 4px 0 #07040e;
+}
+.quest-roadmap .roadmap article.current {
+  border-color: #b491ff77;
+  background: linear-gradient(135deg, #30203e, #1a1225);
+}
+.quest-roadmap .roadmap-dot {
+  margin: 20px 0 25px;
+}
+.quest-roadmap .roadmap-dot:after {
+  width: calc(100% + 150px);
+  max-width: 190px;
+}
+.quest-roadmap .roadmap h3 {
+  font-size: 19px;
+}
+.quest-roadmap .roadmap p {
+  font-size: 12px;
+  min-height: 160px;
+}
+.quest-roadmap .roadmap b {
+  font-size: 9px;
+  line-height: 1.8;
+}
+.quest-roadmap .roadmap article > span {
+  font-size: 8px;
+}
+.quest-roadmap .roadmap article:last-child .roadmap-dot:after {
+  width: 100px;
+}
+.faq-guide {
+  position: relative;
+  padding-top: 160px !important;
+  display: block !important;
+}
+.faq-guide > img {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  image-rendering: pixelated;
+  animation: robotBob 5s ease-in-out infinite;
+  filter: drop-shadow(0 8px 14px #6c308b44);
+}
+.faq-guide-caption {
+  font: 7px var(--mono);
+  letter-spacing: 1.5px;
+  color: #8ee5dd;
+  margin-bottom: 14px;
+}
+.faq-guide .eyebrow {
+  font-size: 9px;
+}
+.faq-section .faq summary {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.faq-section .faq details p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.download-section {
+  position: relative;
+  min-height: 680px;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 85px 0 65px;
+  text-align: left;
+  background: #0c0915;
+}
+.release-world {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.release-world > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 60%;
+  image-rendering: pixelated;
+}
+.release-world > div {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #0c0915f2 0%, #0c0915e3 32%, #0c09155a 60%, #0c091515 100%),
+    linear-gradient(0deg, #0c0915e6, transparent 30%, transparent 85%, #0c091580);
+}
+.download-section > .wrap {
+  position: relative;
+}
+.download-section > .wrap > * {
+  max-width: 580px;
+}
+.download-section .eyebrow {
+  justify-content: flex-start;
+  color: #bda7d5;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.download-section h2 {
+  font: 400 80px/0.98 var(--pixel);
+  letter-spacing: -2px;
+  color: #e3ccfb;
+  text-shadow: 3px 3px 0 #3d2257;
+  margin: 28px 0 25px;
+}
+.download-section h2 .serif {
+  font: inherit;
+  color: #bda0ef;
+}
+.download-section > .wrap > p {
+  font-size: 14px;
+  color: #c2afd0;
+  line-height: 1.9;
+}
+.download-actions {
+  justify-content: flex-start;
+}
+.download-section .download-meta {
+  font-size: 7px !important;
+  line-height: 1.9 !important;
+  color: #a18cb7 !important;
+}
+.github-repository {
+  margin: 35px 0 0;
+  padding: 15px;
+  background: #171021d9;
+  border: 1px solid #a38bcf44;
+  backdrop-filter: blur(10px);
+  max-width: 500px !important;
+}
+.github-repository b {
+  font-size: 12px;
+}
+.github-repository div > span {
+  font-size: 10px;
+}
+.github-repository > .pill {
+  font-size: 6px;
+}
+.faq-section {
+  padding-bottom: 100px;
+}
+footer {
+  position: relative;
+  background: #0a0811;
+}
+footer:before {
+  content: '✦';
+  position: absolute;
+  top: -6px;
+  right: 50px;
+  color: #8ee5dd;
+  font: 16px var(--pixel);
+}
+footer > div,
+footer button {
+  font-size: 11px;
+}
+footer p {
+  font-size: 11px;
+}
+footer p span {
+  font-size: 10px;
+}
+@keyframes worldSpark {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes reticleGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+@keyframes terminalSweep {
+  0%,
+  70% {
+    translate: -100% 0;
+  }
+  100% {
+    translate: 100% 0;
+  }
+}
+@media (max-width: 1100px) {
+  .nav nav {
+    gap: 16px;
+    font-size: 12px;
+  }
+  .nav {
+    gap: 18px;
+  }
+  .source-grid {
+    gap: 30px;
+  }
+  .source-lab-art {
+    height: 225px;
+  }
+  .tool-card {
+    padding: 26px;
+  }
+  .tool-card h3 {
+    font-size: 23px;
+  }
+  .install-mission .install-grid {
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    padding: 18px;
+  }
+  .quest-roadmap .roadmap article {
+    padding: 20px 15px;
+  }
+  .quest-roadmap .roadmap h3 {
+    font-size: 17px;
+  }
+  .quest-roadmap .roadmap p {
+    font-size: 11px;
+    min-height: 185px;
+  }
+  .quest-roadmap .roadmap article > span {
+    font-size: 7px;
+  }
+  .journey-tabs > button {
+    font-size: 11px;
+    gap: 8px;
+  }
+  .source-visual .diff-body {
+    font-size: 9px;
+  }
+  .download-section h2 {
+    font-size: 72px;
+  }
+  .download-section > .wrap > * {
+    max-width: 510px;
+  }
+}
+@media (max-width: 800px) {
+  .workbench-art {
+    aspect-ratio: 1.9;
+  }
+  .tool-card {
+    padding: 24px;
+  }
+  .tool-card h3 {
+    font-size: 21px;
+  }
+  .tool-card p {
+    font-size: 12px;
+  }
+  .tool-card ul {
+    font-size: 11px;
+    min-height: 125px;
+  }
+  .tool-card-top .pill {
+    font-size: 7px;
+  }
+  .source-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .source-grid > div > p {
+    max-width: 650px;
+  }
+  .source-lab-art {
+    height: 300px;
+  }
+  .source-visual {
+    max-width: 650px;
+    width: 100%;
+  }
+  .source-visual .diff-body {
+    font-size: 12px;
+  }
+  .journey-screen {
+    padding: 18px;
+    grid-template-columns: 1fr 70px 1fr;
+  }
+  .journey-window-top {
+    font-size: 7px;
+    gap: 5px;
+    padding: 10px 9px;
+  }
+  .journey-window-top > b {
+    display: none;
+  }
+  .journey-editor pre {
+    font-size: 10px;
+    padding: 27px 13px;
+  }
+  .journey-tabs {
+    gap: 7px;
+  }
+  .journey-tabs > button {
+    font-size: 10px;
+    padding: 13px 6px;
+    gap: 6px;
+  }
+  .journey-tabs > button > span {
+    font-size: 9px;
+  }
+  .journey-bridge > b {
+    font-size: 5px;
+  }
+  .journey-file-status {
+    font-size: 7px;
+  }
+  .install-mission .install-grid {
+    grid-template-columns: 215px 1fr;
+    gap: 18px;
+    padding: 15px;
+  }
+  .install-mission .step-button > b {
+    font-size: 10px;
+  }
+  .install-mission .guide-description p {
+    font-size: 12px;
+    min-height: 160px;
+  }
+  .setup-mission-bar {
+    font-size: 7px;
+    padding: 14px 16px;
+  }
+  .setup-meter {
+    width: 80px;
+  }
+  .quest-roadmap .roadmap {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .quest-roadmap .roadmap p {
+    min-height: 100px;
+    font-size: 12px;
+  }
+  .quest-roadmap .roadmap article {
+    padding: 24px;
+  }
+  .quest-roadmap .roadmap article > span {
+    font-size: 8px;
+  }
+  .quest-roadmap .roadmap h3 {
+    font-size: 20px;
+  }
+  .faq-guide {
+    padding-top: 0 !important;
+    min-height: 150px;
+    padding-left: 140px;
+  }
+  .faq-guide > img {
+    top: 0;
+    left: 0;
+  }
+  .faq-guide h2 {
+    font-size: 38px;
+    margin-top: 15px !important;
+  }
+  .download-section {
+    min-height: 720px;
+    padding-top: 65px;
+  }
+  .release-world > img {
+    object-position: 75% 60%;
+  }
+  .release-world > div {
+    background:
+      linear-gradient(90deg, #0c0915ed 0%, #0c0915ce 45%, #0c091544 100%),
+      linear-gradient(0deg, #0c0915d9, transparent 50%);
+  }
+  .download-section h2 {
+    font-size: 70px;
+  }
+  .download-section > .wrap > * {
+    max-width: 520px;
+  }
+}
+@media (max-width: 560px) {
+  .feature-large {
+    padding: 25px 23px 0;
+  }
+  .workbench-art {
+    margin: 20px -23px 0;
+    aspect-ratio: 1.35;
+  }
+  .workbench-art figcaption {
+    font-size: 6px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    gap: 5px;
+  }
+  .workbench-art figcaption > span:last-child {
+    font-size: 6px;
+  }
+  .tool-choice {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tool-card {
+    padding: 25px;
+  }
+  .tool-card h3 {
+    font-size: 24px;
+  }
+  .tool-card p {
+    font-size: 13px;
+  }
+  .tool-card ul {
+    font-size: 12px;
+    min-height: 0;
+  }
+  .tool-card-top .pill {
+    font-size: 8px;
+  }
+  .comparison-verdict {
+    padding: 15px;
+    gap: 10px;
+  }
+  .comparison-verdict p {
+    font-size: 11px;
+  }
+  .pixel-spark {
+    font-size: 21px;
+  }
+  .source-grid > div > p {
+    font-size: 13px;
+  }
+  .source-grid .apply-boundary {
+    font-size: 11px;
+  }
+  .source-lab-art {
+    height: 220px;
+  }
+  .source-visual .diff-body {
+    font-size: 9px;
+  }
+  .source-visual .diff-footer {
+    font-size: 7px;
+  }
+  .source-visual .window-top {
+    font-size: 7px;
+  }
+  .journey-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .journey-tabs > button {
+    font-size: 11px;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+  .journey-screen {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 0;
+  }
+  .journey-canvas {
+    height: 170px;
+  }
+  .journey-bridge {
+    height: 65px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 13px;
+  }
+  .journey-bridge i {
+    left: 50%;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    right: auto;
+  }
+  .journey-bridge > span {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+  }
+  .journey-bridge > b {
+    font-size: 5px;
+    margin: 0;
+    background: #110d1b;
+    position: absolute;
+    left: calc(50% + 26px);
+    padding: 4px;
+  }
+  .journey-editor pre {
+    height: 150px;
+    font-size: 11px;
+    padding: 20px 15px;
+  }
+  .journey-window-top {
+    font-size: 8px;
+  }
+  .journey-window-top > b {
+    display: block;
+    font-size: 6px;
+  }
+  .journey-caption {
+    padding: 17px;
+  }
+  .journey-caption h3 {
+    font-size: 16px;
+  }
+  .journey-caption p {
+    font-size: 12px;
+  }
+  .workflow-note {
+    font-size: 10px;
+  }
+  .mode-cards h3 {
+    font-size: 24px;
+  }
+  .mode-cards p,
+  .mode-cards ul {
+    font-size: 12px;
+  }
+  .setup-mission-bar {
+    display: block;
+    padding: 13px;
+    font-size: 7px;
+  }
+  .setup-mission-bar > div {
+    margin-top: 11px;
+    justify-content: space-between;
+  }
+  .setup-meter {
+    width: 100px;
+  }
+  .install-mission .install-grid {
+    grid-template-columns: 1fr;
+    padding: 13px;
+    gap: 17px;
+  }
+  .install-mission .step-button > b {
+    font-size: 9px;
+  }
+  .install-mission .step-button {
+    padding: 10px 7px;
+  }
+  .install-mission .guide-picture {
+    height: 220px;
+    padding: 20px 15px;
+  }
+  .install-mission .guide-description {
+    padding: 18px;
+  }
+  .install-mission .guide-description h3 {
+    font-size: 22px;
+  }
+  .install-mission .guide-description p {
+    font-size: 12px;
+    min-height: 0;
+  }
+  .install-mission .guide-description code {
+    font-size: 10px;
+  }
+  .install-mission .guide-display > small {
+    font-size: 6px;
+    padding: 0 18px 15px;
+  }
+  .compat-badge {
+    display: none;
+  }
+  .compatibility .support-table {
+    padding: 0 15px;
+  }
+  .support-table p {
+    font-size: 11px;
+  }
+  .support-table b {
+    font-size: 12px;
+  }
+  .support-tag {
+    font-size: 7px;
+  }
+  .support-note {
+    font-size: 10px;
+  }
+  .quest-banner {
+    padding: 14px;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .quest-banner > span {
+    font-size: 30px;
+  }
+  .quest-banner > p {
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+  .quest-banner small {
+    font-size: 10px;
+    max-width: 210px;
+  }
+  .quest-banner img {
+    width: 65px;
+    height: 65px;
+    margin-left: auto;
+    margin-right: -10px;
+  }
+  .quest-roadmap .roadmap {
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+  .quest-roadmap .roadmap article {
+    padding: 23px;
+  }
+  .quest-roadmap .roadmap h3 {
+    font-size: 21px;
+  }
+  .quest-roadmap .roadmap p {
+    font-size: 12px;
+    min-height: 0;
+  }
+  .quest-roadmap .roadmap-dot {
+    margin: 16px 0 20px;
+  }
+  .quest-roadmap .roadmap-dot:after {
+    max-width: 65vw;
+    width: 200px !important;
+  }
+  .quest-roadmap .roadmap b {
+    font-size: 9px;
+  }
+  .faq-guide {
+    padding-left: 105px;
+    min-height: 130px;
+  }
+  .faq-guide > img {
+    width: 95px;
+    height: 95px;
+    top: 12px;
+  }
+  .faq-guide-caption {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+  }
+  .faq-guide .eyebrow {
+    font-size: 8px;
+  }
+  .faq-guide h2 {
+    font-size: 31px;
+    margin-top: 10px !important;
+  }
+  .faq-section .faq summary {
+    font-size: 12px;
+  }
+  .faq-section .faq details p {
+    font-size: 12px;
+  }
+  .faq-section {
+    padding-bottom: 65px;
+  }
+  .download-section {
+    min-height: 890px;
+    padding-top: 55px;
+    padding-bottom: 250px;
+  }
+  .download-section .eyebrow {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+  .download-section h2 {
+    font-size: 61px;
+    letter-spacing: -1.5px;
+    margin: 24px 0 20px;
+  }
+  .download-section > .wrap > p {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+  .download-actions {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .github-repository {
+    padding: 12px;
+    margin-top: 24px;
+  }
+  .github-repository div > span {
+    font-size: 9px;
+  }
+  .release-world > img {
+    height: 570px;
+    position: absolute;
+    bottom: 0;
+    object-position: 70% 70%;
+    width: 100%;
+  }
+  .release-world > div {
+    background: linear-gradient(
+      180deg,
+      #0c0915 0%,
+      #0c0915 36%,
+      #0c0915cc 55%,
+      #0c091515 85%,
+      #0c0915b3
+    );
+  }
+  .github-repository {
+    backdrop-filter: none;
+  }
+  footer > div,
+  footer button {
+    font-size: 10px;
+  }
+  footer p {
+    font-size: 10px;
+  }
+  footer p span {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workbench-art img {
+    transition: none;
+  }
+}
