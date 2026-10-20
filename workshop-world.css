@@ -674,7 +674,7 @@ body {
   position: relative;
   background:
     linear-gradient(#110d1ee8, #160c26e8),
-    url('assets/selection-workbench.png') center/cover;
+    url('assets/selection-workbench.webp') center/cover;
 }
 .install-mission .guide-picture:before,
 .install-mission .guide-picture:after {

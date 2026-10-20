@@ -9,7 +9,47 @@
       content="Edit the page in front of you. Live Layout Editor brings visual editing, live CSS and reviewed source changes to connected localhost projects."
     />
     <title>Live Layout Editor — Your visual developer workshop.</title>
+    <link rel="canonical" href="https://liveforge-pi.vercel.app/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="icon" href="assets/logo.png" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Live Layout Editor" />
+    <meta property="og:title" content="Live Layout Editor — Your visual developer workshop" />
+    <meta
+      property="og:description"
+      content="Edit the page in front of you. Visual editing, live CSS and reviewed source changes for connected localhost projects."
+    />
+    <meta property="og:url" content="https://liveforge-pi.vercel.app/" />
+    <meta property="og:image" content="https://liveforge-pi.vercel.app/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pixel-art developer workshop with glowing screens and a friendly robot guide"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Live Layout Editor — Your visual developer workshop" />
+    <meta
+      name="twitter:description"
+      content="Edit the page in front of you. Visual editing, live CSS and reviewed source changes for connected localhost projects."
+    />
+    <meta name="twitter:image" content="https://liveforge-pi.vercel.app/assets/og-image.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Live Layout Editor",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Chrome",
+        "url": "https://liveforge-pi.vercel.app/",
+        "image": "https://liveforge-pi.vercel.app/assets/og-image.jpg",
+        "description": "A Chrome extension for visual webpage editing, live CSS inspection and reviewed source updates for connected localhost projects.",
+        "sameAs": "https://github.com/gthub1435/live-layout-editor-plugin"
+      }
+    </script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="pixel-workshop.css" />
     <link rel="stylesheet" href="workshop-world.css" />
@@ -44,7 +84,7 @@
     <div class="cursor-halo" aria-hidden="true"></div>
     <div class="reading-progress" aria-hidden="true"></div>
     <header class="nav">
-      <a class="brand" href="#" aria-label="Live Layout Editor home"
+      <a class="brand" href="#"
         ><img src="assets/logo.png" alt="" /><span
           >live<span class="brand-light">layout</span><small>EDITOR</small></span
         ></a
@@ -61,7 +101,7 @@
     <main>
       <section class="hero pixel-hero" aria-labelledby="workshop-title">
         <div class="world-scene" aria-hidden="true">
-          <img src="assets/workshop-scene.png" alt="" fetchpriority="high" />
+          <img src="assets/workshop-scene.webp" alt="" width="1536" height="1024" fetchpriority="high" />
           <div class="world-shade"></div>
           <div class="window-glow violet-glow"></div>
           <div class="window-glow amber-glow"></div>
@@ -116,7 +156,7 @@
           </div>
           <button id="robot-guide" aria-label="Ask the workshop robot for a developer tip">
             <img
-              src="assets/workshop-guide.png"
+              src="assets/workshop-guide.webp"
               alt="Friendly pixel-art terminal robot guide"
               width="210"
               height="210"
@@ -229,7 +269,7 @@
             </p>
             <figure class="workbench-art">
               <img
-                src="assets/selection-workbench.png"
+                src="assets/selection-workbench.webp"
                 loading="lazy"
                 width="1536"
                 height="1024"
@@ -369,7 +409,7 @@
           <div class="source-visual">
             <figure class="source-lab-art">
               <img
-                src="assets/source-lab.png"
+                src="assets/source-lab.webp"
                 loading="lazy"
                 width="1536"
                 height="1024"
@@ -685,7 +725,7 @@
             THE BUILD CONTINUES
             <small>Current features and future plans are separate checkpoints.</small>
           </p>
-          <img src="assets/workshop-guide.png" alt="" loading="lazy" width="85" height="85" />
+          <img src="assets/workshop-guide.webp" alt="" loading="lazy" width="85" height="85" />
         </div>
         <div class="roadmap">
           <article class="current">
@@ -706,7 +746,7 @@
             <a
               class="text-link"
               data-github-repository
-              href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+              href="https://github.com/gthub1435/live-layout-editor-plugin/tree/main/live-layout-editor-plugin/live-layout-editor-plugin"
               target="_blank"
               rel="noopener noreferrer"
               >View repository ↗</a
@@ -736,7 +776,7 @@
       </section>
       <section class="section wrap reveal faq-section">
         <div class="faq-guide">
-          <img src="assets/workshop-guide.png" alt="" loading="lazy" width="130" height="130" />
+          <img src="assets/workshop-guide.webp" alt="" loading="lazy" width="130" height="130" />
           <div class="faq-guide-caption">BYTE’S KNOWLEDGE BASE</div>
           <div class="eyebrow">GOOD QUESTIONS.</div>
           <h2>Before you<br /><span class="serif">jump in.</span></h2>
@@ -816,7 +856,7 @@
       </section>
       <section id="download" class="download-section reveal">
         <div class="release-world" aria-hidden="true">
-          <img src="assets/release-portal.png" loading="lazy" width="1536" height="1024" alt="" />
+          <img src="assets/release-portal.webp" loading="lazy" width="1536" height="1024" alt="" />
           <div></div>
         </div>
         <div class="wrap">
@@ -846,7 +886,7 @@
             <a
               class="button outline"
               data-github-repository
-              href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+              href="https://github.com/gthub1435/live-layout-editor-plugin/tree/main/live-layout-editor-plugin/live-layout-editor-plugin"
               target="_blank"
               rel="noopener noreferrer"
               >View on GitHub ↗</a
